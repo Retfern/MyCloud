@@ -1,6 +1,6 @@
-package common;
+package common.message;
 
-import swing.StatusFile;
+import common.StatusFile;
 
 public class InfoFileClass {
 

@@ -1,9 +1,8 @@
 package client.auth;
 
-public interface AuthService extends AutoCloseable{
+public interface AuthService {
 
     void close() throws Exception;
 
     boolean authUser(String username, String password) throws ClassNotFoundException;
-    boolean renameUser(String username, String newName, String password)throws ClassNotFoundException;
 }

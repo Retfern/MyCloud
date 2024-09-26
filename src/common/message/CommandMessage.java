@@ -1,8 +1,9 @@
-package common;
+package common.message;
 
 public class CommandMessage extends AbstractMessage {
     public enum Command {
-        DELETE, ADD, DOWNLOAD, FILE_EXIST_TRUE, FILE_EXIST_FALSE, STOP
+        DELETE, ADD, DOWNLOAD, FILE_EXIST_TRUE, FILE_EXIST_FALSE, STOP, FILE_DOWNLOAD_NEXT_PART,
+        FILE_UPLOAD_COMPLETED, SET_USER_NAME
     }
 
     private Command command;
@@ -18,6 +19,15 @@ public class CommandMessage extends AbstractMessage {
     public CommandMessage (Command command, String path, Integer idx) {
         this.command = command;
         this.path = path;
+        this.idx = idx;
+    }
+    public CommandMessage (Command command, String path) {
+        this.command = command;
+        this.path = path;
+    }
+
+    public CommandMessage (Command command, Integer idx) {
+        this.command = command;
         this.idx = idx;
     }
 

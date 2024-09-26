@@ -1,7 +1,7 @@
 package swing;
 import client.Network;
 import client.auth.AuthException;
-import common.AuthMessage;
+import common.message.AuthMessage;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -24,7 +24,7 @@ public class LoginDialog extends JDialog {
     private boolean connected;
 
     public LoginDialog(Frame parent, Network network) {
-        super(parent, "Login", true);
+        super(parent, "Окно авторизации", true);
 
         this.network = network;
         this.connected = false;
@@ -34,7 +34,7 @@ public class LoginDialog extends JDialog {
 
         cs.fill = GridBagConstraints.HORIZONTAL;
 
-        lbUsername = new JLabel("Username: ");
+        lbUsername = new JLabel("Имя пользователя: ");
         cs.gridx = 0;
         cs.gridy = 0;
         cs.gridwidth = 1;
@@ -46,7 +46,7 @@ public class LoginDialog extends JDialog {
         cs.gridwidth = 2;
         panel.add(tfUsername, cs);
 
-        lbPassword = new JLabel("Password: ");
+        lbPassword = new JLabel("Пароль: ");
         cs.gridx = 0;
         cs.gridy = 1;
         cs.gridwidth = 1;
@@ -59,8 +59,8 @@ public class LoginDialog extends JDialog {
         panel.add(pfPassword, cs);
         panel.setBorder(new LineBorder(Color.GRAY));
 
-        btnLogin = new JButton("Login");
-        btnCancel = new JButton("Cancel");
+        btnLogin = new JButton("Войти");
+        btnCancel = new JButton("Отмена");
 
         JPanel bp = new JPanel();
         bp.add(btnLogin);
@@ -83,7 +83,6 @@ public class LoginDialog extends JDialog {
 
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(bp, BorderLayout.PAGE_END);
-
         pack();
         setResizable(false);
         setLocationRelativeTo(parent);

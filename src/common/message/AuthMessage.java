@@ -1,4 +1,4 @@
-package common;
+package common.message;
 
 public class AuthMessage extends AbstractMessage {
 private String userName;
